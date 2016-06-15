@@ -4,16 +4,17 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Jogo</title>
     </h:head>
     <h:body>
-        <h2> Olá #{JogoBean.nome} <br/> Tente Adivinhar o Número Que Nós Sorteamos</h2><br/>
+        <h2> Olá #{jogoBean.nome} <br/> Tente Adivinhar o Número Que Nós Sorteamos</h2><br/>
         <h3> Número de Tentativas #{JogoBean.numeroTentativas}</h3>
+        <p:outputLabel for="txtNumeroCorreto" value="#{jogoBean.numeroSorteado}"/> 
         <p:messages/>
         <h:form>
             <p:panelGrid columns="2">
                 <p:outputLabel for="txtNumeroDigitado" value="Digite seu palpite:"/>
-                <p:inputText id="txtNumeroDigitado" value=""/>
+                <p:inputText id="txtNumeroDigitado" value="#{jogoBean.numeroPalpite}"/>
             </p:panelGrid>
             <p:commandButton value="Acertei?" action="#{JogoBean.jogar()}"/>
             <p:commandButton value="Desisto!" action="#{JogoBean.desistir()}"/>

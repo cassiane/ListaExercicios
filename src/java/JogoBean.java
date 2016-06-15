@@ -16,10 +16,9 @@ import javax.faces.context.FacesContext;
  *
  * @author gx2
  */
-@ManagedBean(name = "JogoBean")
-@ViewScoped
+@ManagedBean
 @SessionScoped
-public class Jogo {
+public class JogoBean {
 
     private String nome;
     private int numeroSorteado;
@@ -27,7 +26,7 @@ public class Jogo {
     private int numeroPalpite;
     Random ran = new Random();
 
-    public Jogo() {
+    public JogoBean() {
         numeroSorteado = ran.nextInt(1000);
     }
 
