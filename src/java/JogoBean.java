@@ -18,33 +18,35 @@ import javax.faces.context.FacesContext;
  */
 @ManagedBean
 @SessionScoped
-public class JogoBean {
+public final class JogoBean {
 
     private String nome;
-    private int numeroSorteado;
-    private int numeroTentativas;
-    private int numeroPalpite;
+    private int numeroSorteado = 0;
+    private int numeroTentativas = 0;
+    private int numeroPalpite = 0;
     Random ran = new Random();
 
     public JogoBean() {
-        numeroSorteado = ran.nextInt(1000);
+        setNumeroSorteado(ran.nextInt(1000));
     }
 
     public String jogar() {
         this.numeroTentativas++;
         if (this.numeroPalpite == this.numeroSorteado) {
-            return "Acerto";
-        } else {
-            if(this.numeroPalpite > this.numeroSorteado){
-                enviarMensagem("O número sorteado é menor que este!");
-            }else if(this.numeroPalpite < this.numeroSorteado){
-                enviarMensagem("O número sorteado é maior que este!");
-            }            
+            return "acerto";
         }
-        return null;
+        if(this.numeroPalpite > this.numeroSorteado){
+            enviarMensagem("O número sorteado é menor que este!");
+        }
+        if(this.numeroPalpite < this.numeroSorteado){
+            enviarMensagem("O número sorteado é maior que este!");
+        }
+        return "repetir";
     }
     
     public String desistir(){
+        setNumeroPalpite(0);
+        setNumeroTentativas(0);
         return "desistir";
     }
     public void enviarMensagem(String mensagem){

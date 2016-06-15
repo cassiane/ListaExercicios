@@ -4,12 +4,11 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Jogo</title>
     </h:head>
     <h:body> 
-        <h2>#{JogoBean.nome} você desistiu ! O número sorteado era: #{jogoBean.numeroSorteado}</h2>
+        <h2>#{JogoBean.nome} você acertou ! Número de tentativas: #{jogoBean.numeroTentativas}</h2>
         <p:button outcome="index" value="Retornar ao Início."/>
         <p:button outcome="Jogando" value="Jogar Novamente"/>
     </h:body>
 </html>
-

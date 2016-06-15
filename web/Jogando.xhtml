@@ -8,16 +8,16 @@
     </h:head>
     <h:body>
         <h2> Olá #{jogoBean.nome} <br/> Tente Adivinhar o Número Que Nós Sorteamos</h2><br/>
-        <h3> Número de Tentativas #{JogoBean.numeroTentativas}</h3>
-        <p:outputLabel for="txtNumeroCorreto" value="#{jogoBean.numeroSorteado}"/> 
+        <h3> Número de Tentativas: #{jogoBean.numeroTentativas}</h3>
+        #{jogoBean.numeroSorteado}
         <p:messages/>
         <h:form>
             <p:panelGrid columns="2">
                 <p:outputLabel for="txtNumeroDigitado" value="Digite seu palpite:"/>
                 <p:inputText id="txtNumeroDigitado" value="#{jogoBean.numeroPalpite}"/>
             </p:panelGrid>
-            <p:commandButton value="Acertei?" action="#{JogoBean.jogar()}"/>
-            <p:commandButton value="Desisto!" action="#{JogoBean.desistir()}"/>
+            <p:commandButton value="Acertei?" action="#{jogoBean.jogar()}"/>
+            <p:commandButton value="Desisto!" action="#{jogoBean.desistir()}"/>
         </h:form>
     </h:body>
 </html>
