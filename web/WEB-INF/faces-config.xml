@@ -4,18 +4,18 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
     <navigation-rule>
-        <from-view-id>/Jogando.xhmtl</from-view-id>
+        <from-view-id>Jogando.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>desistir</from-outcome>
-            <to-view-id>/desistencia.xhtml</to-view-id>
-        </navigation-case>
+            <to-view-id>desistencia.xhtml</to-view-id>
+        </navigation-case>        
+    </navigation-rule>
+    
+    <navigation-rule>
+    <from-view-id>*</from-view-id>
         <navigation-case>
             <from-outcome>repetir</from-outcome>
-            <to-view-id>/Jogando.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>acerto</from-outcome>
-            <to-view-id>/Acerto.xhtml</to-view-id>
+            <to-view-id>Jogando.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>

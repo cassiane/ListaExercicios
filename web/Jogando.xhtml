@@ -16,8 +16,8 @@
                 <p:outputLabel for="txtNumeroDigitado" value="Digite seu palpite:"/>
                 <p:inputText id="txtNumeroDigitado" value="#{jogoBean.numeroPalpite}"/>
             </p:panelGrid>
-            <p:commandButton value="Acertei?" action="#{jogoBean.jogar()}"/>
-            <p:commandButton value="Desisto!" action="#{jogoBean.desistir()}"/>
+            <p:commandButton value="Acertei?" ajax="false" action="#{jogoBean.jogar()}"/>
+            <p:commandButton value="Desisto!" ajax="false" action="#{jogoBean.desistir()}"/>
         </h:form>
     </h:body>
 </html>

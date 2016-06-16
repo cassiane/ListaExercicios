@@ -7,9 +7,15 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body> 
-        <h2>#{JogoBean.nome} você desistiu ! O número sorteado era: #{jogoBean.numeroSorteado}</h2>
-        <p:button outcome="index" value="Retornar ao Início."/>
-        <p:button outcome="Jogando" value="Jogar Novamente"/>
+        <h:form>
+            <h2>#{jogoBean.nome} você desistiu ! <br/>
+            O número sorteado era: #{jogoBean.numeroSorteado}<br/>
+            Número tentativas: #{jogoBean.numeroTentativas}
+            </h2>
+
+            <p:button outcome="index" value="Retornar ao Início."/>
+            <p:commandButton ajax="false" action="#{jogoBean.reiniciar()}" value="Jogar Novamente"/>
+        </h:form>
     </h:body>
 </html>
 

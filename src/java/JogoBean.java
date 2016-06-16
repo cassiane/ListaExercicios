@@ -28,6 +28,8 @@ public final class JogoBean {
 
     public JogoBean() {
         setNumeroSorteado(ran.nextInt(1000));
+        setNumeroPalpite(0);
+        setNumeroTentativas(0);
     }
 
     public String jogar() {
@@ -41,16 +43,20 @@ public final class JogoBean {
         if(this.numeroPalpite < this.numeroSorteado){
             enviarMensagem("O número sorteado é maior que este!");
         }
-        return "repetir";
+        return null;
     }
     
-    public String desistir(){
+    public String reiniciar(){
+        setNumeroSorteado(ran.nextInt(1000));
         setNumeroPalpite(0);
         setNumeroTentativas(0);
+        return "repetir";
+    }
+    public String desistir(){        
         return "desistir";
     }
     public void enviarMensagem(String mensagem){
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", mensagem+"."));
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, mensagem,""));
     }
 
     public String getNome() {
